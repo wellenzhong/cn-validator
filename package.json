@@ -1,0 +1,27 @@
+{
+  "name": "cn-validator",
+  "version": "1.0.0",
+  "description": "A tool to validate Chinese IDs and enterprise license numbers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wellenzhong/cn-validator.git"
+  },
+  "keywords": [
+    "身份证",
+    "营业执照",
+    "统一社会信用号"
+  ],
+  "author": "wellen2000",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wellenzhong/cn-validator/issues"
+  },
+  "homepage": "https://github.com/wellenzhong/cn-validator#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
