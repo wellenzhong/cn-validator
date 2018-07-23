@@ -81,9 +81,9 @@
             if (!GB2260.hasOwnProperty(addrCode)) {
                 //考虑标准不全的情况，搜索不到时向上搜索
                 var tmpAddr;
-                tmpAddr = addrCode.substr(2, 6);
+                tmpAddr = addrCode.substr(0, 4) + "00";
                 if (!GB2260.hasOwnProperty(tmpAddr)) {
-                    tmpAddr = addr.substr(2, 4) + '00';
+                    tmpAddr = addrCode.substr(0, 2) + '0000';
                     if (!GB2260.hasOwnProperty(tmpAddr)) {
                         return false;
                     } else {
@@ -93,7 +93,7 @@
                     return GB2260[tmpAddr];
                 }
             } else {
-                return GB2260[addr];
+                return GB2260[addrCode];
             }
         },
         license: {
@@ -162,8 +162,9 @@
                 let manDep = code.substr(0, 1);
                 let kindCode = code.substr(1, 1);
                 let orgIdCode = code.substr(8, 8);
-                let verifyCode = code.substr(17, 1)
-                let adminArea = _Validator.getAddrInfo(code, GB2260);
+                let verifyCode = code.substr(17, 1);
+                let addrCode = code.substr(2, 6)
+                let adminArea = _Validator.getAddrInfo(addrCode, GB2260);
 
                 res.adminDep = objMan[manDep].name;
                 res.orgType = objMan[manDep]["type"][kindCode]
