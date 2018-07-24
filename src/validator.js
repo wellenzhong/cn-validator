@@ -177,10 +177,43 @@
         },
         personID: {
             isVaild: function (id) {
-                console.log(id)
+                let codeRegx = /^[1-9]{1}[0-9]{3}[0-9]{2}(19|20)[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[0-9xX]{4}/;
+                if (!codeRegx.test(id)) {
+                    return false;
+                }
+                let coefficient = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];
+                let idBaseCode = id.substr(0, 17);
+                let weight = [1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2]
+                let totalSum = 0;
+                for (var i = 0; i < idBaseCode.length; i++) {
+                    totalSum += idBaseCode[i] * coefficient[i]
+                }
+                let _mod = totalSum % 11;
+                let verifyCode = weight[_mod];
+                let lastChar = id.substr(17, 1)
+                console.log(verifyCode)
+                return lastChar == verifyCode;
+
             },
             getInfo: function (id) {
-                console.log(id)
+                if (!this.isVaild(id)) {
+                    console.error("无效的身份证号")
+                    return false;
+                }
+                let addrCode = id.substr(0, 6);
+                let addr = _Validator.getAddrInfo(addrCode, GB2260)
+                let birth = new Date(id.substr(6, 4) + '-' + id.substr(10, 2) + '-' + id.substr(12, 2));
+                let sex = id.substr(16, 1) % 2 === 0 ? 0 : 1;
+                let sexTxt;
+                sexTxt = sex === 0 ? '女' : '男';
+                let res = {};
+
+                res.address = addr;
+                res.birthday = birth;
+                res.sex = sex;
+                res.sexTxt = sexTxt;
+
+                return res;
             }
         }
 
