@@ -18,4 +18,10 @@ CNValidator.license.isVaild(code)
 
 // 获取营业执照信息
 CNValidator.license.getInfo(code)
+
+// 验证身份证有效性
+CNValidator.personID.isVaild(id)
+
+//获取身份证信息
+CNValidator.personID.getInfo(id)
 ```
