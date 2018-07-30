@@ -1,6 +1,6 @@
 {
   "name": "cn-validator",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "A tool to validate Chinese IDs and enterprise license numbers.",
   "main": "index.js",
   "scripts": {

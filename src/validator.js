@@ -116,7 +116,6 @@
                 let validateCode = baseCarsArr[idx] //汇总结果对31求余,再用31减去余数
                 let lastChar = code.substr(code.length - 1, 1)
                 // console.log("末位应该为:" + validateCode)
-                // return regx.test("91620102MA73L1X695")
                 return validateCode == lastChar
             },
             getInfo: function (code) {
@@ -191,7 +190,6 @@
                 let _mod = totalSum % 11;
                 let verifyCode = weight[_mod];
                 let lastChar = id.substr(17, 1)
-                console.log(verifyCode)
                 return lastChar == verifyCode;
 
             },
