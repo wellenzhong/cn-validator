@@ -27,3 +27,6 @@ CNValidator.personID.getInfo(id)
 ```
 ### references
 身份证验证部分参考自（copy from）：https://www.npmjs.com/package/id-validator
+
+### others
+如果有什么问题，麻烦发一个Issues，谢谢！
