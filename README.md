@@ -39,7 +39,9 @@ CNValidator.personID.makeId(5) // 多个
 ```
 ### update
 1.添加生成伪代码API，使用方法如上;
+
 2.更新正则，修复bug;
+
 3.增加身份证信息的年龄属性;
 ### references
 身份证验证部分参考自（copy from）：https://www.npmjs.com/package/id-validator
