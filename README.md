@@ -14,7 +14,7 @@ import CNValidator from 'cn-validator';
 ...
 
 // 验证营业执照有效性
-CNValidator.license.isVaild(code)
+CNValidator.license.isValid(code)
 
 // 获取营业执照信息
 CNValidator.license.getInfo(code)
@@ -26,7 +26,7 @@ CNValidator.license.makeId() //单个
 CNValidator.license.makeId(5) // 多个
 
 // 验证身份证有效性
-CNValidator.personID.isVaild(id)
+CNValidator.personID.isValid(id)
 
 //获取身份证信息
 CNValidator.personID.getInfo(id)

@@ -198,6 +198,17 @@
       let validateCode = util.getPersonValidateCode(code17)
       let finalCode = code17+validateCode
       return finalCode
+    },
+    getStarSign:function(mon, day) {
+    
+      var s = "魔羯水瓶双鱼牡羊金牛双子巨蟹狮子处女天秤天蝎射手魔羯";
+    
+      var d = [20, 19, 21, 21, 21, 22, 23, 23, 23, 23, 22, 22];
+    
+      var i = mon * 2 - (day < d[mon - 1] ? 2 : 0);
+    
+      return s.substring(i, i + 2) + "座";
+    
     }
   };
   var _Validator = {
@@ -226,7 +237,7 @@
       }
     },
     license: {
-      isVaild: function (code) {
+      isValid: function (code) {
         let regx = /^([15][1239]|Y1|9[123])([1-9]\d{5})([A-Z0-9]{10})$/i
         let regxCheck = regx.test(code)
         if (!regxCheck) {
@@ -237,7 +248,7 @@
         return validateCode == lastChar
       },
       getInfo: function (code) {
-        if (!this.isVaild(code)) {
+        if (!this.isValid(code)) {
           console.error("无效的统一社会信用号")
           return;
         }
@@ -277,7 +288,7 @@
       }
     },
     personID: {
-      isVaild: function (id) {
+      isValid: function (id) {
         let codeRegx = /^[1-9]{1}[0-9]{3}[0-9]{2}(19|20)[0-9]{2}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])[0-9xX]{4}/;
         if (!codeRegx.test(id)) {
           return false;
@@ -288,7 +299,7 @@
 
       },
       getInfo: function (id) {
-        if (!this.isVaild(id)) {
+        if (!this.isValid(id)) {
           console.error("无效的身份证号")
           return false;
         }
