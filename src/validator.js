@@ -125,7 +125,7 @@
         total += a; //将相乘的结果汇总
       }
       let idx = (31 - total % 31) * 1
-      let validateCode = baseCarsArr[idx] //汇总结果对31求余,再用31减去余数,取对应位的值作为校验码
+      let validateCode = baseCarsArr[idx%baseCarsArr.length] //汇总结果对31求余,再用31减去余数,取对应位的值作为校验码
       return validateCode
     },
     districtKeys:function(){
@@ -200,15 +200,10 @@
       return finalCode
     },
     getStarSign:function(mon, day) {
-    
       var s = "魔羯水瓶双鱼牡羊金牛双子巨蟹狮子处女天秤天蝎射手魔羯";
-    
       var d = [20, 19, 21, 21, 21, 22, 23, 23, 23, 23, 22, 22];
-    
       var i = mon * 2 - (day < d[mon - 1] ? 2 : 0);
-    
       return s.substring(i, i + 2) + "座";
-    
     }
   };
   var _Validator = {
