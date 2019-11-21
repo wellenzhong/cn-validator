@@ -10,7 +10,7 @@
   if (typeof define !== 'undefined' && define.amd) {
     define('IDValidator', [], instance);
   }
-  // CMD / Seajs 
+  // CMD / Seajs
   else if (typeof define === "function" && define.cmd && module.exports) {
     define(function (require, exports, module) {
       module.exports = factory(isWindow, global);
@@ -130,7 +130,7 @@
     },
     districtKeys:function(){
       let areaIds = []
-      for (const key in GB2260) {
+      for (let key in GB2260) {
         if (GB2260.hasOwnProperty(key)) {
           areaIds.push(key+'')
         }
@@ -141,7 +141,7 @@
       let dep = ["1","5","9","Y"][Math.round(Math.random()*3)]; // 获得首位
       let kind = this.objMan[dep]
       let kindArr = []
-      for (const key in kind.type) {
+      for (let key in kind.type) {
         if (kind.type.hasOwnProperty(key)) {
           kindArr.push(key+'')
         }
@@ -149,7 +149,7 @@
       let areaIds = this.districtKeys()
       let kindLen = kindArr.length;
       let kindid = kindArr[Math.round(Math.random()*(kindLen-1))] //获得组织类型
-      
+
       let arealen = areaIds.length;
       let areaid = areaIds[Math.round(Math.random()*(arealen-1))] //获取地区代码
       let baseChars = "0123456789ABCDEFGHJKLMNPQRTUWXY";
@@ -157,7 +157,7 @@
       let orgCode =  this.generateMixed(baseCharsArr,9) // 获得组织编码
       let code17 = dep+kindid+areaid+orgCode
       let validateCode = this.getLicValidateCode(code17)
-      let totalCode = code17+validateCode 
+      let totalCode = code17+validateCode
       return totalCode
     },
     getPersonValidateCode:function(id){
@@ -238,7 +238,7 @@
         if (!regxCheck) {
             return false
         }
-        let validateCode = util.getLicValidateCode(code) 
+        let validateCode = util.getLicValidateCode(code)
         let lastChar = code.substr(code.length - 1, 1)
         return validateCode == lastChar
       },
