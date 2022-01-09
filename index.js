@@ -1,1 +1,1 @@
-module.exports = require('./src/validator')
+module.exports = require('./dist/cn-validator-cjs.js')

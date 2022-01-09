@@ -43,8 +43,13 @@ CNValidator.personID.makeId(5) // 多个
 2.更新正则，修复bug;
 
 3.增加身份证信息的年龄属性;
-### references
-身份证验证部分参考自（copy from）：https://www.npmjs.com/package/id-validator
+
+4. 增加了15位营业执照的校验；
 
 ### others
 如果有什么问题，麻烦发一个Issues，谢谢！
+
+### 开发
+
+`npm install`
+`npm run build`

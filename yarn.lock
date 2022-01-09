@@ -414,6 +414,11 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
+fsevents@~2.3.2:
+  version "2.3.2"
+  resolved "https://registry.npmmirror.com/fsevents/download/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
+  integrity sha1-ilJveLj99GI7cJ4Ll1xSwkwC/Ro=
+
 gaze@^0.5.1:
   version "0.5.2"
   resolved "https://registry.npmjs.org/gaze/-/gaze-0.5.2.tgz#40b709537d24d1d45767db5a908689dfe69ac44f"
@@ -1278,6 +1283,13 @@ ret@~0.1.10:
   version "0.1.15"
   resolved "https://registry.npmjs.org/ret/-/ret-0.1.15.tgz#b8a4825d5bdb1fc3f6f53c2bc33f81388681c7bc"
   integrity sha512-TTlYpa+OL+vMMNG24xSlQGEJ3B/RzEfUlLct7b5G/ytav+wPrplCpVMFuwzXbkecJrb6IYo1iFb0S9v37754mg==
+
+rollup@^2.63.0:
+  version "2.63.0"
+  resolved "https://registry.npmmirror.com/rollup/download/rollup-2.63.0.tgz#fe2f7fec2133f3fab9e022b9ac245628d817c6bb"
+  integrity sha512-nps0idjmD+NXl6OREfyYXMn/dar3WGcyKn+KBzPdaLecub3x/LrId0wUcthcr8oZUAcZAR8NKcfGGFlNgGL1kQ==
+  optionalDependencies:
+    fsevents "~2.3.2"
 
 safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
