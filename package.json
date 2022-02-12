@@ -1,7 +1,7 @@
 {
   "name": "cn-validator",
   "version": "1.2.5",
-  "description": "A tool to validate Chinese IDs and enterprise license numbers.",
+  "description": "一个校验身份证号/统一社会信用号/营业执照及组织机构代码号的工具，支持旧的营业执照和组织机构代码证号",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,10 +14,11 @@
   "keywords": [
     "身份证",
     "营业执照",
-    "统一社会信用号"
+    "统一社会信用号",
+    "组织机构代码"
   ],
   "author": "wellen2000",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/wellenzhong/cn-validator/issues"
   },
