@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.cnValidator = {}));
-})(this, (function (exports) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.cnValidator = factory());
+})(this, (function () { 'use strict';
 
   const util = {
     checkArg: function (id, forceType) {
@@ -3686,7 +3686,7 @@
     659001: "新疆维吾尔族自治区石河子市",
   };
 
-  const validator = function () {
+  const validator =  function () {
     var _Validator = {
       getAddrInfo: function (addrCode, GB2260) {
         GB2260 = GB2260 || null;
@@ -3729,7 +3729,7 @@
               return false;
             }
             const ret = util.validateOldLicense(code);
-            return ret
+            return ret;
           } else {
             return false;
           }
@@ -3771,6 +3771,86 @@
           } else {
             return util.makeLicenseId();
           }
+        },
+      },
+      orgLicenseCode: {
+        isValid: function (orgCode) {
+          var ret = false;
+          var codeVal = [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G",
+            "H",
+            "I",
+            "J",
+            "K",
+            "L",
+            "M",
+            "N",
+            "O",
+            "P",
+            "Q",
+            "R",
+            "S",
+            "T",
+            "U",
+            "V",
+            "W",
+            "X",
+            "Y",
+            "Z",
+          ];
+          var intVal = [
+            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+            20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
+          ];
+          var crcs = [3, 7, 9, 10, 5, 8, 4, 2];
+          if (!("" == orgCode) && orgCode.length == 10) {
+            var sum = 0;
+            for (var i = 0; i < 8; i++) {
+              var codeI = orgCode.substring(i, i + 1);
+              var valI = -1;
+              for (var j = 0; j < codeVal.length; j++) {
+                if (codeI == codeVal[j]) {
+                  valI = intVal[j];
+                  break;
+                }
+              }
+              sum += valI * crcs[i];
+            }
+            var crc = 11 - (sum % 11);
+
+            switch (crc) {
+              case 10: {
+                crc = "X";
+                break;
+              }
+            }
+            if (crc == orgCode.substring(9)) {
+              ret = true;
+            } else {
+              ret = false;
+            }
+          } else if ("" == orgCode) {
+            ret = false;
+          } else {
+            ret = false;
+          }
+          return ret;
         },
       },
       personID: {
@@ -3830,9 +3910,7 @@
     return _Validator;
   };
 
-  exports.validator = validator;
-
-  Object.defineProperty(exports, '__esModule', { value: true });
+  return validator;
 
 }));
 //# sourceMappingURL=cn-validator.js.map

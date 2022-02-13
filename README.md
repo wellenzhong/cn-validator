@@ -10,7 +10,11 @@ npm install cn-validator --save
 ## Usage
 
 ```
-import CNValidator from 'cn-validator';
+import Validator from 'cn-validator';
+```
+一定要记得实例化
+```
+const CNValidator = new Validator()
 ```
 // 验证营业执照有效性
 ```

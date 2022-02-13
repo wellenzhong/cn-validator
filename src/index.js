@@ -1,6 +1,6 @@
 import util from "./util";
 import GB2260 from "./GB2260";
-export const validator = function () {
+const validator =  function () {
   var _Validator = {
     getAddrInfo: function (addrCode, GB2260) {
       GB2260 = GB2260 || null;
@@ -226,3 +226,4 @@ export const validator = function () {
   };
   return _Validator;
 };
+export default validator

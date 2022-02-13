@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory(global.cnValidator = {}));
-})(this, (function (exports) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.cnValidator = factory());
+})(this, (function () { 'use strict';
 
   const util = {
     checkArg: function (id, forceType) {
@@ -3686,7 +3686,7 @@
     659001: "新疆维吾尔族自治区石河子市",
   };
 
-  const validator = function () {
+  const validator =  function () {
     var _Validator = {
       getAddrInfo: function (addrCode, GB2260) {
         GB2260 = GB2260 || null;
@@ -3910,9 +3910,7 @@
     return _Validator;
   };
 
-  exports.validator = validator;
-
-  Object.defineProperty(exports, '__esModule', { value: true });
+  return validator;
 
 }));
 //# sourceMappingURL=cn-validator.js.map

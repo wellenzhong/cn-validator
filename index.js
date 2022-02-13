@@ -1,1 +1,0 @@
-module.exports = require('./dist/cn-validator-cjs.js')
