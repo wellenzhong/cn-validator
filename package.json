@@ -1,6 +1,6 @@
 {
   "name": "cn-validator",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "一个校验身份证号/统一社会信用号/营业执照及组织机构代码号的工具，支持旧的营业执照和组织机构代码证号",
   "main": "./dist/cn-validator.js",
   "scripts": {
