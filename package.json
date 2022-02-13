@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/wellenzhong/cn-validator#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
     "rollup": "^2.63.0"
   }
 }
